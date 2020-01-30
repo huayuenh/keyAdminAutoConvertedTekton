@@ -1,0 +1,40 @@
+---
+inputs:
+- type: git
+  branch: master
+  service: GIT_REPO
+  path: .manage_keys
+triggers:
+- type: git
+  name: Git PR Trigger
+  branch: master
+  events: '{"push":true,"pull_request":true,"pull_request_closed":false}'
+  eventListener: EventListener
+- type: manual
+  name: Manaul Trigger
+  eventListener: EventListener
+properties:
+- name: vault_name
+  value: ${VAULT_INSTANCE}
+  type: text
+- name: validation_signer
+  value: ${VALIDATION_SIGNER}
+  type: text
+- name: api-key
+  value: ${API_KEY}
+  type: SECURE
+- name: prod-region
+  value: ${BUILD_REGION_ID}
+  type: text
+- name: prod-resource-group
+  value: ${BUILD_RESOURCE_GROUP}
+  type: text
+- name: app-name
+  value: ${APP_NAME}
+  type: text
+- name: registry-namespace
+  value: ${REGISTRY_NAMESPACE}
+  type: text
+- name: build_signer
+  value: ${BUILD_SIGNER}
+  type: text
