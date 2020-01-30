@@ -26,9 +26,10 @@ services:
     parameters:
       name: '{{services.repo.parameters.repo_name}}'
       ui-pipeline: true
+      type: tekton
       configuration:
         content:
-          $text: manage_keys.yml
+          $text: manage_keys_tekton.yml
         env:
           APP_NAME: '{{form.pipeline.parameters.app-name}}'
           API_KEY: '{{form.pipeline.parameters.api-key}}'
