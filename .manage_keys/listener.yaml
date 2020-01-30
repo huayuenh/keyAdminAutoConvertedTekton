@@ -6,30 +6,23 @@ metadata:
 spec:
   params:
   - name: registry-namespace
-    description: The namespace in the container image registry. You can set it up
-      with {bx cr namespace-add]. Learn more at https://cloud.ibm.com/docs/services/Registry?topic=registry-getting-started#getting-started.
+    description: The namespace
   - name: registry-region
-    description: The IBM Cloud region for image registry
+    description: The IBM
   - name: api-key
-    description: The IBM Cloud API key is used to access the IBM Cloud Kubernetes
-      Service API and interact with the cluster. You can obtain your API key with
-      'bx iam api-key-create' or via the console at https://cloud.ibm.com/iam#/apikeys
-      by clicking **Create API key** (Each API key only can be viewed once).
+    description: The IBM
   - name: prod-resource-group
-    description: The IBM Cloud resource group for production deployment
+    description: The IBM
   - name: vault_name
-    description: Specify a Key Protect instance name.  If an instance has already
-      been created, the existing one will be used, otherwise a new one will be created.
-      You can specify signer names in the build and validation fields below or use
-      the default values.
+    description: Specify a
   - name: repository
-    description: The git repo
+    description: The git
   - name: prod-region
-    description: The IBM Cloud region for production deployment
+    description: The IBM
   - name: app-name
-    description: '#/messages/deploy.appDescription'
+    description: test
   - name: revision
-    description: the branch for the gir repo
+    description: the branch
   resourcetemplates:
   - apiVersion: tekton.dev/v1alpha1
     kind: PipelineRun
