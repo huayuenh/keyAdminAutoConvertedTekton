@@ -4,46 +4,46 @@ metadata:
   name: pipeline
 spec:
   params:
-  - name: registry-namespace
-    description: The namespace
-  - name: registry-region
-    description: The IBM
-  - name: api-key
-    description: The IBM
-  - name: prod-resource-group
-    description: The IBM
-  - name: vault_name
-    description: Specify a
-  - name: repository
-    description: The git
-  - name: prod-region
-    description: The IBM 
-  - name: app-name
-    description: test
-  - name: revision
-    description: the branch
-  tasks:
-  - name: signerkey
-    taskRef:
-      name: signerkey-task
-    params:
-    - name: task-pvc
-      value: $(params.pipeline-pvc)
     - name: registry-namespace
-      value: $(params.registry-namespace)
+      description: The namespace
     - name: registry-region
-      value: $(params.registry-region)
+      description: The IBM
     - name: api-key
-      value: $(params.api-key)
+      description: The IBM
     - name: prod-resource-group
-      value: $(params.prod-resource-group)
+      description: The IBM
     - name: vault_name
-      value: $(params.vault_name)
+      description: Specify a
     - name: repository
-      value: $(params.repository)
+      description: The git
     - name: prod-region
-      value: $(params.prod-region)
+      description: The IBM 
     - name: app-name
-      value: $(params.app-name)
+      description: test
     - name: revision
-      value: $(params.revision)
+      description: the branch
+  tasks:
+    - name: signerkey
+      taskRef:
+        name: signerkey-task
+      params:
+        - name: task-pvc
+          value: $(params.pipeline-pvc)
+        - name: registry-namespace
+          value: $(params.registry-namespace)
+        - name: registry-region
+          value: $(params.registry-region)
+        - name: api-key
+          value: $(params.api-key)
+        - name: prod-resource-group
+          value: $(params.prod-resource-group)
+        - name: vault_name
+          value: $(params.vault_name)
+        - name: repository
+          value: $(params.repository)
+        - name: prod-region
+          value: $(params.prod-region)
+        - name: app-name
+          value: $(params.app-name)
+        - name: revision
+          value: $(params.revision)

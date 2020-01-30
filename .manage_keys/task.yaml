@@ -4,37 +4,37 @@ metadata:
   name: signerkey-task
 spec:
   params:
-  - name: registry-namespace
-    description: The namespace
-  - name: registry-region
-    description: The IBM
-  - name: api-key
-    description: The IBM
-  - name: prod-resource-group
-    description: The IBM
-  - name: vault_name
-    description: Specify a
-  - name: repository
-    description: The git
-  - name: prod-region
-    description: The IBM
-  - name: app-name
-    description: test
-  - name: revision
-    description: the branch
+    - name: registry-namespace
+      description: The namespace
+    - name: registry-region
+      description: The IBM
+    - name: api-key
+      description: The IBM
+    - name: prod-resource-group
+      description: The IBM
+    - name: vault_name
+      description: Specify a
+    - name: repository
+      description: The git
+    - name: prod-region
+      description: The IBM
+    - name: app-name
+      description: test
+    - name: revision
+      description: the branch
   steps:
-  - name: clone-step
-    image: alpine/git
-    command: ["/bin/sh", "-c"]
-    args:
-      - set -e -o pipefail;
-        echo "Cloning $REPOSITORY";
-        git clone -q -b $REVISION $REPOSITORY .;
+    - name: clone-step
+      image: alpine/git
+      command: ["/bin/sh", "-c"]
+      args:
+        - set -e -o pipefail;
+          echo "Cloning $REPOSITORY";
+          git clone -q -b $REVISION $REPOSITORY .;
     env:
-    - name: REPOSITORY
-      value: $(inputs.params.repository)
-    - name: REVISION
-      value: $(inputs.params.revision)
+      - name: REPOSITORY
+        value: $(inputs.params.repository)
+      - name: REVISION
+        value: $(inputs.params.revision)
   - name: Create Build Signer Key
     image: ibmcom/pipeline-base-image:latest
     command: ["/bin/sh+","-c"]
@@ -42,32 +42,32 @@ spec:
       - #!/bin/bash
         echo "RUNNING";
     env:
-    - name: VAULT_INSTANCE
-      value: $(inputs.params.vault_name)
-    - name: REVISION
-      value: $(inputs.params.master)
-    - name: VALIDATION_SIGNER
-      value: $(inputs.params.validation_signer)
-    - name: API_KEY
-      value: $(inputs.params.api-key)
-    - name: BUILD_REGION_ID
-      value: $(inputs.params.prod-region)
-    - name: BUILD_RESOURCE_GROUP
-      value: $(inputs.params.prod-resource-group)
-    - name: APP_NAME
-      value: $(inputs.params.app-name)
-    - name: REPOSITORY
-      value: $(inputs.params.com/huayuenh/keyAdminAutoConvertedTekton)
-    - name: REGISTRY_NAMESPACE
-      value: $(inputs.params.registry-namespace)
-    - name: BUILD_SIGNER
-      value: $(inputs.params.build_signer)
-    - name: GIT_REPO
-      value: $(inputs.params.repo)
+      - name: VAULT_INSTANCE
+        value: $(inputs.params.vault_name)
+      - name: REVISION
+        value: $(inputs.params.master)
+      - name: VALIDATION_SIGNER
+        value: $(inputs.params.validation_signer)
+      - name: API_KEY
+        value: $(inputs.params.api-key)
+      - name: BUILD_REGION_ID
+        value: $(inputs.params.prod-region)
+      - name: BUILD_RESOURCE_GROUP
+        value: $(inputs.params.prod-resource-group)
+      - name: APP_NAME
+        value: $(inputs.params.app-name)
+      - name: REPOSITORY
+        value: $(inputs.params.com/huayuenh/keyAdminAutoConvertedTekton)
+      - name: REGISTRY_NAMESPACE
+        value: $(inputs.params.registry-namespace)
+      - name: BUILD_SIGNER
+        value: $(inputs.params.build_signer)
+      - name: GIT_REPO
+        value: $(inputs.params.repo)
     volumeMounts:
-    - monthPath: /artifacts
-      name: task-volume
+      - monthPath: /artifacts
+        name: task-volume
   volumes:
-  - name: task-volume
-    persistentVolumeClaim:
-      name: $(inputs.params.task-pvc)
+    - name: task-volume
+      persistentVolumeClaim:
+        name: $(inputs.params.task-pvc)
