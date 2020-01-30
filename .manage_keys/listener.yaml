@@ -39,6 +39,10 @@ spec:
       params:
       - name: pipeline-pvc
         value: pipelinerun-$(uid)-pvc
+      - name: repository
+        value: $(params.repository)
+      - name: revision
+        value: $(params.revision)
       - name: registry-namespace
         value: $(params.registry-namespace)
       - name: registry-region
@@ -67,7 +71,7 @@ metadata:
 spec:
   params:
   - name: repository
-    value: PLACEHOLDER tekton git
+    value: "https://github.com/huayuenh/keyAdminAutoConvertedTekton"
   - name: revision
     value: "master"
 ---
