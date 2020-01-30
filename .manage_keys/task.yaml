@@ -2,7 +2,7 @@
 apiVersion: tekton.dev/v1alpha1
 kind: Task
 metadata:
-  name: create build signer key-task
+  name: signerkey
 spec:
   params:
   - name: registry-namespace
@@ -35,9 +35,9 @@ spec:
     image: alpine/git
     command: ["/bin/sh", "-c"]
     args:
-    - set -e -o pipefail;
-          echo "Cloning $REPOSITORY";
-          git clone -q -b $REVISION $REPOSITORY .;
+      - set -e -o pipefail;
+        echo "Cloning $REPOSITORY";
+        git clone -q -b $REVISION $REPOSITORY .;
     env:
     - name: REPOSITORY
       value: $(inputs.params.repository)

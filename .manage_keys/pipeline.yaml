@@ -31,9 +31,9 @@ spec:
   - name: revision
     description: the branch for the gir repo
   tasks:
-  - name: create build signer key
+  - name: signerkey
     taskRef:
-      name: create build signer key-task
+      name: signerkey-task
     params:
     - name: task-pvc
       value: $(params.pipeline-pvc)
