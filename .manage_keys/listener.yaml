@@ -69,7 +69,7 @@ spec:
   - name: repository
     value: PLACEHOLDER tekton git
   - name: revision
-    value: master
+    value: "master"
 ---
 apiVersion: tekton.dev/v1alpha1
 kind: EventListener
