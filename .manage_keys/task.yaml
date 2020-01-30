@@ -62,6 +62,8 @@ spec:
     env:
     - name: VAULT_INSTANCE
       value: $(inputs.params.vault_name)
+    - name: REVISION
+      value: $(inputs.params.master)
     - name: VALIDATION_SIGNER
       value: $(inputs.params.validation_signer)
     - name: API_KEY
@@ -72,10 +74,14 @@ spec:
       value: $(inputs.params.prod-resource-group)
     - name: APP_NAME
       value: $(inputs.params.app-name)
+    - name: REPOSITORY
+      value: $(inputs.params.com/huayuenh/keyAdminAutoConvertedTekton)
     - name: REGISTRY_NAMESPACE
       value: $(inputs.params.registry-namespace)
     - name: BUILD_SIGNER
       value: $(inputs.params.build_signer)
+    - name: GIT_REPO
+      value: $(inputs.params.repo)
     volumeMounts:
     - monthPath: /artifacts
       name: task-volume
@@ -159,6 +165,8 @@ spec:
     env:
     - name: VAULT_INSTANCE
       value: $(inputs.params.vault_name)
+    - name: REVISION
+      value: $(inputs.params.master)
     - name: VALIDATION_SIGNER
       value: $(inputs.params.validation_signer)
     - name: API_KEY
@@ -169,10 +177,14 @@ spec:
       value: $(inputs.params.prod-resource-group)
     - name: APP_NAME
       value: $(inputs.params.app-name)
+    - name: REPOSITORY
+      value: $(inputs.params.com/huayuenh/keyAdminAutoConvertedTekton)
     - name: REGISTRY_NAMESPACE
       value: $(inputs.params.registry-namespace)
     - name: BUILD_SIGNER
       value: $(inputs.params.build_signer)
+    - name: GIT_REPO
+      value: $(inputs.params.repo)
     volumeMounts:
     - monthPath: /artifacts
       name: task-volume
@@ -242,6 +254,8 @@ spec:
     env:
     - name: VAULT_INSTANCE
       value: $(inputs.params.vault_name)
+    - name: REVISION
+      value: $(inputs.params.master)
     - name: VALIDATION_SIGNER
       value: $(inputs.params.validation_signer)
     - name: API_KEY
@@ -252,10 +266,14 @@ spec:
       value: $(inputs.params.prod-resource-group)
     - name: APP_NAME
       value: $(inputs.params.app-name)
+    - name: REPOSITORY
+      value: $(inputs.params.com/huayuenh/keyAdminAutoConvertedTekton)
     - name: REGISTRY_NAMESPACE
       value: $(inputs.params.registry-namespace)
     - name: BUILD_SIGNER
       value: $(inputs.params.build_signer)
+    - name: GIT_REPO
+      value: $(inputs.params.repo)
     volumeMounts:
     - monthPath: /artifacts
       name: task-volume
@@ -338,6 +356,8 @@ spec:
     env:
     - name: VAULT_INSTANCE
       value: $(inputs.params.vault_name)
+    - name: REVISION
+      value: $(inputs.params.master)
     - name: VALIDATION_SIGNER
       value: $(inputs.params.validation_signer)
     - name: API_KEY
@@ -348,10 +368,14 @@ spec:
       value: $(inputs.params.prod-resource-group)
     - name: APP_NAME
       value: $(inputs.params.app-name)
+    - name: REPOSITORY
+      value: $(inputs.params.com/huayuenh/keyAdminAutoConvertedTekton)
     - name: REGISTRY_NAMESPACE
       value: $(inputs.params.registry-namespace)
     - name: BUILD_SIGNER
       value: $(inputs.params.build_signer)
+    - name: GIT_REPO
+      value: $(inputs.params.repo)
     volumeMounts:
     - monthPath: /artifacts
       name: task-volume
