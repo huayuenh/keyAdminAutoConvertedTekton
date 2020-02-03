@@ -17,9 +17,6 @@ properties:
 - name: vault_name
   value: ${VAULT_INSTANCE}
   type: text
-- name: master
-  value: ${REVISION}
-  type: text
 - name: validation_signer
   value: ${VALIDATION_SIGNER}
   type: text
@@ -35,15 +32,9 @@ properties:
 - name: app-name
   value: ${APP_NAME}
   type: text
-- name: com/huayuenh/keyAdminAutoConvertedTekton
-  value: ${REPOSITORY}
-  type: text
 - name: registry-namespace
   value: ${REGISTRY_NAMESPACE}
   type: text
 - name: build_signer
   value: ${BUILD_SIGNER}
-  type: text
-- name: repo
-  value: ${GIT_REPO}
   type: text

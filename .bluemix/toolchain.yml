@@ -38,7 +38,7 @@ services:
       type: tekton
       configuration:
         content:
-          $text: manage_keys_tekton.yml
+          $text: manage_keys.yml
         env:
           APP_NAME: '{{form.pipeline.parameters.app-name}}'
           API_KEY: '{{form.pipeline.parameters.api-key}}'
@@ -48,9 +48,6 @@ services:
           BUILD_SIGNER: '{{form.pipeline.parameters.build_signer}}'
           VALIDATION_SIGNER: '{{form.pipeline.parameters.validation_signer}}'
           REGISTRY_NAMESPACE: '{{form.pipeline.parameters.registry-namespace}}'
-          REPOSITORY: 'https://github.com/huayuenh/keyAdminAutoConvertedTekton'
-          REVISION: master
-          GIT_REPO: repo
         execute: false
 form:
   pipeline:
